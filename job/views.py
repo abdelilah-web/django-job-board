@@ -10,14 +10,15 @@ def job_list(request):
     page_obj = paginator.get_page(page_number)
     
     context = {
-        'jobs': page_obj
+        'jobs': page_obj,
+        'all_jobs': job_list
     }
 
     return render(request, 'job/job_list.html', context)
 
 
-def job_detail(request, id):
-    job_detail = Job.objects.get(id = id)
+def job_detail(request, slug):
+    job_detail = Job.objects.get(slug = slug)
     context = {
         'job' : job_detail
     }
