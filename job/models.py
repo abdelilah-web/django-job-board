@@ -9,8 +9,8 @@ django model field :
     - db size
 '''
 job_type_choices = (
-    ('1', 'Full Time'),
-    ('2', 'Part Time'),
+    ('Full Time', 'Full Time'),
+    ('Part Time', 'Part Time'),
 )
 
 class Job(models.Model):
@@ -19,13 +19,14 @@ class Job(models.Model):
     job_type     = models.CharField(
         max_length = 20,
         choices = job_type_choices,
-        default = '1')
+        default = 'Full Time')
     description  = models.TextField(max_length=1000)
     published_at = models.DateTimeField(auto_now=True) # take the time by it self
     Vacancy      = models.IntegerField(default=1)
     salary       = models.IntegerField(default=0)
     experience   = models.IntegerField(default=1)
     category     = models.ForeignKey('Category', on_delete=models.CASCADE)# One to Many
+    image        = models.ImageField(upload_to = 'jobs/')
 
     def __str__(self):
         return self.title
