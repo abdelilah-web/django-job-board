@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 '''
@@ -14,6 +16,7 @@ job_type_choices = (
 )
 
 class Job(models.Model):
+    owner        = models.ForeignKey(User, name='owner', on_delete=models.CASCADE)
     title        = models.CharField(max_length=120)
    # location     = 
     job_type     = models.CharField(
