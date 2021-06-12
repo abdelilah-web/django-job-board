@@ -30,3 +30,9 @@ static files : [frontend] images , css , javascript
                 and we modify in the template : - {% load static %}
                                                 - and we modify in href ex : href="{% static 'css/bootstrap.min.css' %}"
 media files : [upload] images
+
+
+
+
+Django Rest Framework :
+    db ------ django ----- api [json] ----- mobile & js framwork

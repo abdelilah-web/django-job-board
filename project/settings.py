@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'contact',
     'blog',
+     'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,12 @@ MEDIA_ROOT =  BASE_DIR / "media" # create a folder by the name of media
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+EMAIL_BACKEND  = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'imap.gmail.com'
+EMAIL_HOST_USER = 'kalimatatira@gmail.com'
+EMAIL_HOST_PASSWORD = 'xtvagaizoyfkxype'
+EMAIL_USE_TLS = True
+EMAIL_PORT = '993'
